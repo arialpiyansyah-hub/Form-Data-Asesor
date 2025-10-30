@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Formulir Data Asesor Akreditasi Program Studi</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, #6EE7B7, #3B82F6); /* Gradasi hijau-biru */
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95); /* Sedikit transparan */
+            backdrop-filter: blur(10px);
+        }
+        canvas {
+            cursor: crosshair;
+            border: 2px dashed #ccc;
+            border-radius: 0.5rem;
+        }
+        /* Style untuk tanda bintang merah */
+        .required-star {
+            color: #EF4444; /* Merah */
+            margin-left: 2px;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 font-sans">
+
+    <div class="form-container w-full max-w-2xl p-8 rounded-xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">Formulir Data Asesor</h1>
+        <p class="text-center text-gray-600 mb-6">Akreditasi Program Studi</p>
+        <p class="text-center text-sm text-red-600 mb-8">Semua kolom bertanda (<span class="required-star">*</span>) wajib diisi.</p>
+
+        <form id="assessorForm" novalidate>
+            <div class="space-y-6">
+
+                <!-- Data Diri -->
+                <div>
+                    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Lengkap dan Gelar <span class="required-star">*</span></label>
+                    <input type="text" id="nama" name="nama" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div>
+                    <label for="telepon" class="block text-sm font-medium text-gray-700">No. Telepon (WhatsApp) <span class="required-star">*</span></label>
+                    <input type="tel" id="telepon" name="telepon" required placeholder="Contoh: 08123456789" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Informasi Perjalanan -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="asal" class="block text-sm font-medium text-gray-700">Asal Keberangkatan <span class="required-star">*</span></label>
+                        <input type="text" id="asal" name="asal" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="tujuan" class="block text-sm font-medium text-gray-700">Lokasi Tujuan Akreditasi <span class="required-star">*</span></label>
+                        <input type="text" id="tujuan" name="tujuan" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <!-- Tanggal Pelaksanaan -->
+                <div>
+                    <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal Mulai Pelaksanaan <span class="required-star">*</span></label>
+                    <input type="date" id="tanggal" name="tanggal" required class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <!-- Upload Dokumen -->
+                <div>
+                    <label for="file" class="block text-sm font-medium text-gray-700">Upload Dokumen Pelaksanaan <span class="required-star">*</span></label>
+                    <p class="text-xs text-gray-500 mt-1">Jadikan satu file (PDF/ZIP/RAR). Dokumen mencakup: 1. Surat Tugas BAN-PT, 2. Surat Pernyataan Melaksanakan AL, 3. Berita Acara, 4. Dokumentasi.</p>
+                    <input type="file" id="file" name="file" required accept=".pdf,.zip,.rar" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                </div>
+
+                <!-- Informasi Bank -->
+                <fieldset class="border rounded-md p-4">
+                    <legend class="text-sm font-medium text-gray-700 px-2">Informasi Rekening Bank</legend>
+                    <div class="space-y-6 mt-2">
+                        <div>
+                            <label for="rekening" class="block text-sm font-medium text-gray-700">No. Rekening <span class="required-star">*</span></label>
+                            <p class="text-xs text-gray-500 mt-1">Tambahkan tanda petik (') di awal agar tidak berubah jadi format ilmiah. Contoh: '1234567890</p>
+                            <input type="text" id="rekening" name="rekening" required placeholder="'1234567890" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="bank" class="block text-sm font-medium text-gray-700">Nama Bank <span class="required-star">*</span></label>
+                                <input type="text" id="bank" name="bank" required placeholder="Contoh: Bank Mandiri" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="pemilikRekening" class="block text-sm font-medium text-gray-700">Nama Pemilik Rekening <span class="required-star">*</span></label>
+                                <input type="text" id="pemilikRekening" name="pemilikRekening" required placeholder="Sesuai buku tabungan" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Tanda Tangan -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Tanda Tangan <span class="required-star">*</span></label>
+                    <div class="mt-1 relative">
+                        <canvas id="signature-pad" class="w-full h-40 bg-gray-50"></canvas>
+                        <button type="button" id="clear-signature" class="absolute top-2 right-2 px-3 py-1 text-xs font-semibold text-white bg-red-500 rounded-full hover:bg-red-600">Bersihkan</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Submit -->
+            <div class="mt-8">
+                <button type="submit" id="submit-button" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50">
+                    Kirim Data
+                </button>
+            </div>
+        </form>
+        
+        <!-- Notifikasi -->
+        <div id="notification" class="mt-4 text-center p-4 rounded-md text-white hidden transition-opacity duration-300"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
