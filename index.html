@@ -30,8 +30,9 @@
 
     <div class="form-container w-full max-w-2xl p-8 rounded-xl shadow-2xl">
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">Formulir Data Asesor</h1>
-        <p class="text-center text-gray-600 mb-6">Akreditasi Program Studi</p>
-        <p class="text-center text-sm text-red-600 mb-8">Semua kolom bertanda (<span class="required-star">*</span>) wajib diisi.</p>
+        <p class="text-center text-gray-600 mb-2">Akreditasi Program Studi</p>
+        <p class="text-lg font-bold text-center text-gray-600 mb-6">Direktorat Pendidikan Tinggi Keagamaan Islam</p>
+        <p class="text-sm text-red-600 mb-5">Semua kolom bertanda (<span class="required-star">*</span>) wajib diisi.</p>
 
         <form id="assessorForm" novalidate>
             <div class="space-y-6">
@@ -44,7 +45,8 @@
                 
                 <div>
                     <label for="telepon" class="block text-sm font-medium text-gray-700">No. Telepon (WhatsApp) <span class="required-star">*</span></label>
-                    <input type="tel" id="telepon" name="telepon" required placeholder="Contoh: 08123456789" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    <p class="text-xs text-gray-500 mt-1">Tambahkan tanda petik (') di awal agar tidak berubah jadi format ilmiah. Contoh: '08123456789</p>
+                    <input type="tel" id="telepon" name="telepon" required placeholder="Contoh: '08123456789" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
                 </div>
 
                 <!-- Informasi Perjalanan -->
@@ -68,7 +70,11 @@
                 <!-- Upload Dokumen -->
                 <div>
                     <label for="file" class="block text-sm font-medium text-gray-700">Upload Dokumen Pelaksanaan <span class="required-star">*</span></label>
-                    <p class="text-xs text-gray-500 mt-1">Jadikan satu file (PDF/ZIP/RAR). Dokumen mencakup: 1. Surat Tugas BAN-PT, 2. Surat Pernyataan Melaksanakan AL, 3. Berita Acara, 4. Dokumentasi.</p>
+                    <p class="text-xs text-gray-500 mt-1">Jadikan satu file (PDF/ZIP/RAR). Dokumen mencakup: <br> 
+                        1. Surat Tugas BAN-PT, <br>
+                        2. Surat Pernyataan Melaksanakan AL, <br>
+                        3. Berita Acara, <br>
+                        4. Dokumentasi.</p>
                     <input type="file" id="file" name="file" required accept=".pdf,.zip,.rar" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
                 </div>
 
