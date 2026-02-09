@@ -1,6 +1,6 @@
 // --- PASTE URL SCRIPT ANDA DI SINI ---
         // (Pastikan ini adalah URL yang SAMA dari deployment Anda sebelumnya)
-        const scripURL = 'https://script.google.com/macros/s/AKfycbzyfzSnASfzkOVi8RZG58J91qfF_BiqzRVDGD1M8lI6TrIxcmcykkUoGn03h5V5b5g5qA/exec';
+        const scripURL = 'https://script.google.com/macros/s/AKfycbx0VJQPFs9jQbZxNLZWcLZruzSwdI4Xm-YOKrV-faydKBXcm6_CybICBK1JHje1GYJeMQ/exec';
         
         // --- Inisialisasi Elemen ---
         const form = document.getElementById('assessorForm');
@@ -156,3 +156,4 @@
         // Panggil resizeCanvas saat halaman dimuat
 
         resizeCanvas();
+
