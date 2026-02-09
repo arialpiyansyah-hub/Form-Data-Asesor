@@ -1,4 +1,3 @@
-<script>
         // --- PASTE URL SCRIPT ANDA DI SINI ---
         // (Pastikan ini adalah URL yang SAMA dari deployment Anda sebelumnya)
         const scriptURL = 'https://script.google.com/macros/s/AKfycbw7epQ6S-TkJA-ICpCs9NMGrD1Xx2DbwDuv0O6_xUmfPtDqGsqlxCk6aPdPDVukhsQ9Bg/exec'; 
@@ -156,4 +155,3 @@
         
         // Panggil resizeCanvas saat halaman dimuat
         resizeCanvas();
-    </script>
